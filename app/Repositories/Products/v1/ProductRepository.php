@@ -21,7 +21,7 @@ class ProductRepository implements ProductRepositoryInterface
 
 
         return Cache::remember($cacheKey, 600, function () use ($filters) {
-            $query = Product::query();
+            $query = Product::with('media');
 
             // Price filter
             if (isset($filters['min_price']) && isset($filters['max_price'])) {
@@ -48,6 +48,6 @@ class ProductRepository implements ProductRepositoryInterface
 
     public function getProductById(int $id)
     {
-        return Product::find($id);
+        return Product::with('media')->find($id);
     }
 }

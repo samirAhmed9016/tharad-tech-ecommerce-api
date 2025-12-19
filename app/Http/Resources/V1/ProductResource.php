@@ -20,7 +20,7 @@ class ProductResource extends JsonResource
             'description' => $this->getTranslation('description', app()->getLocale()),
             'price' => $this->price,
             'quantity' => $this->quantity,
-            'image' => $this->getFirstMediaUrl('default'),
+            'image' => $this->getFirstMediaUrl('products'),
             'created_at' => $this->created_at->toDateTimeString(),
             'updated_at' => $this->updated_at->toDateTimeString(),
         ];
