@@ -11,7 +11,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->loadApiVersions();
     }
 
     /**
@@ -20,5 +20,16 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         //
+    }
+
+
+    //this is used to load all apis versions from the file routes/api_versions.php
+    protected function loadApiVersions(): void
+    {
+        $path = base_path('routes/api_versions.php');
+
+        if (file_exists($path)) {
+            require $path;
+        }
     }
 }
