@@ -1,0 +1,1295 @@
+{
+	"info": {
+		"_postman_id": "a4f8fc7d-4d03-44ae-94a6-d771e552b66f",
+		"name": "tharad-tech-ecommerce-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31397059",
+		"_collection_link": "https://grad25-2001.postman.co/workspace/grad_25-Workspace~ab9636b8-54a3-4990-8ef2-145f326c6a97/collection/31397059-a4f8fc7d-4d03-44ae-94a6-d771e552b66f?action=share&source=collection_link&creator=31397059"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "samir ahmed",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "samir@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "123456789",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url_tharad_tech}}/auth/register",
+							"host": [
+								"{{base_url_tharad_tech}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "example.register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "samir ahmed",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "samir@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456789",
+											"type": "text"
+										},
+										{
+											"key": "password_confirmation",
+											"value": "123456789",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url_tharad_tech}}/auth/register",
+									"host": [
+										"{{base_url_tharad_tech}}"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Dec 2025 08:32:40 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"user\": {\n            \"id\": 1,\n            \"name\": \"samir ahmed\",\n            \"email\": \"samir@gmail.com\"\n        },\n        \"token\": \"2|t2rfxaFFPIzQbTTzjWXETAokXKs6Ofh8pJmVisbJ78bbdf78\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "samir@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url_tharad_tech}}/auth/login",
+							"host": [
+								"{{base_url_tharad_tech}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "example.login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "samir@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456789",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url_tharad_tech}}/auth/login",
+									"host": [
+										"{{base_url_tharad_tech}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Dec 2025 08:33:52 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "5"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "4"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"user\": {\n            \"id\": 1,\n            \"name\": \"samir ahmed\",\n            \"email\": \"samir@gmail.com\"\n        },\n        \"token\": \"3|hrIFxLghDWN0Dbt0elm2vjjxlxb4KuCTloB8DQs07e5a9983\"\n    }\n}"
+						},
+						{
+							"name": "Too Many Attempts for throtle",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "samir@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456789",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url_tharad_tech}}/auth/login",
+									"host": [
+										"{{base_url_tharad_tech}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "Too Many Requests",
+							"code": 429,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "5"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "0"
+								},
+								{
+									"key": "Retry-After",
+									"value": "51"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1766133367"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Dec 2025 08:35:16 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Too Many Attempts.\",\n    \"exception\": \"Illuminate\\\\Http\\\\Exceptions\\\\ThrottleRequestsException\",\n    \"file\": \"C:\\\\xampp\\\\htdocs\\\\tharad-tech-ecommerce-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests.php\",\n    \"line\": 254,\n    \"trace\": [\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\tharad-tech-ecommerce-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests.php\",\n            \"line\": 158,\n            \"function\": \"buildException\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\tharad-tech-ecommerce-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests.php\",\n            \"line\": 93,\n            \"function\": \"handleRequest\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\tharad-tech-ecommerce-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 219,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\tharad-tech-ecommerce-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 137,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\tharad-tech-ecommerce-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 821,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\tharad-tech-ecommerce-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 800,\n            \"function\": \"runRouteWithinStack\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\tharad-tech-ecommerce-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 764,\n            \"function\": \"runRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\tharad-tech-ecommerce-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 753,\n            \"function\": \"dispatchToRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\tharad-tech-ecommerce-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\n            \"line\": 200,\n            \"function\": \"dispatch\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\tharad-tech-ecommerce-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"Illuminate\\\\Foundation\\\\Http\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\tharad-tech-ecommerce-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\tharad-tech-ecommerce-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ConvertEmptyStringsToNull.php\",\n            \"line\": 31,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\tharad-tech-ecommerce-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 219,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ConvertEmptyStringsToNull\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\tharad-tech-ecommerce-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\tharad-tech-ecommerce-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TrimStrings.php\",\n            \"line\": 51,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\tharad-tech-ecommerce-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 219,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TrimStrings\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\tharad-tech-ecommerce-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Http\\\\Middleware\\\\ValidatePostSize.php\",\n            \"line\": 27,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\tharad-tech-ecommerce-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 219,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\ValidatePostSize\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\tharad-tech-ecommerce-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestsDuringMaintenance.php\",\n            \"line\": 109,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\tharad-tech-ecommerce-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 219,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestsDuringMaintenance\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\tharad-tech-ecommerce-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Http\\\\Middleware\\\\HandleCors.php\",\n            \"line\": 61,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\tharad-tech-ecommerce-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 219,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\HandleCors\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\tharad-tech-ecommerce-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Http\\\\Middleware\\\\TrustProxies.php\",\n            \"line\": 58,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\tharad-tech-ecommerce-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 219,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\TrustProxies\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\tharad-tech-ecommerce-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\InvokeDeferredCallbacks.php\",\n            \"line\": 22,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\tharad-tech-ecommerce-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 219,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\InvokeDeferredCallbacks\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\tharad-tech-ecommerce-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Http\\\\Middleware\\\\ValidatePathEncoding.php\",\n            \"line\": 26,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\tharad-tech-ecommerce-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 219,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\ValidatePathEncoding\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\tharad-tech-ecommerce-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 137,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\tharad-tech-ecommerce-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\n            \"line\": 175,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\tharad-tech-ecommerce-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\n            \"line\": 144,\n            \"function\": \"sendRequestThroughRouter\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\tharad-tech-ecommerce-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Application.php\",\n            \"line\": 1220,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\tharad-tech-ecommerce-api\\\\public\\\\index.php\",\n            \"line\": 20,\n            \"function\": \"handleRequest\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\xampp\\\\htdocs\\\\tharad-tech-ecommerce-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\resources\\\\server.php\",\n            \"line\": 23,\n            \"function\": \"require_once\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{base_url_tharad_tech}}/auth/logout",
+							"host": [
+								"{{base_url_tharad_tech}}"
+							],
+							"path": [
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "example.logout",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{base_url_tharad_tech}}/auth/logout",
+									"host": [
+										"{{base_url_tharad_tech}}"
+									],
+									"path": [
+										"auth",
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Dec 2025 08:39:02 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Logged out successfully\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "GetAllProducts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|RkETYpcnnmFfqnBMjJXUuQ7pWBpJrFTcVaWqjEEp8f045325",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_tharad_tech}}/products?max_price=100",
+							"host": [
+								"{{base_url_tharad_tech}}"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "max_price",
+									"value": "100"
+								},
+								{
+									"key": "sort_by",
+									"value": "price_desc",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "example.en.products",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "locale",
+										"value": "en",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{base_url_tharad_tech}}/products",
+									"host": [
+										"{{base_url_tharad_tech}}"
+									],
+									"path": [
+										"products"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Dec 2025 15:40:09 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": 10001,\n                \"title\": \"Over-Ear Headphones\",\n                \"description\": \"Occaecati error id vel non quod minima laboriosam.\",\n                \"price\": \"2430.64\",\n                \"quantity\": 136,\n                \"image\": \"\",\n                \"created_at\": \"2025-12-19T12:18:34.000000Z\",\n                \"updated_at\": \"2025-12-19T12:18:34.000000Z\"\n            },\n            {\n                \"id\": 10000,\n                \"title\": \"Smart Watch\",\n                \"description\": \"Qui sit tenetur provident nisi distinctio dolores vero qui culpa.\",\n                \"price\": \"3806.50\",\n                \"quantity\": 112,\n                \"image\": \"\",\n                \"created_at\": \"2025-12-19T12:18:34.000000Z\",\n                \"updated_at\": \"2025-12-19T12:18:34.000000Z\"\n            },\n            {\n                \"id\": 9999,\n                \"title\": \"Over-Ear Headphones\",\n                \"description\": \"Aut qui ipsa facere cum officiis similique et dolores officia assumenda qui soluta nemo quibusdam.\",\n                \"price\": \"1248.54\",\n                \"quantity\": 160,\n                \"image\": \"\",\n                \"created_at\": \"2025-12-19T12:18:34.000000Z\",\n                \"updated_at\": \"2025-12-19T12:18:34.000000Z\"\n            },\n            {\n                \"id\": 9998,\n                \"title\": \"Leather Jacket\",\n                \"description\": \"Consequatur enim dolores architecto molestias impedit dolor ut laudantium voluptas voluptas ea dolores vero.\",\n                \"price\": \"2112.25\",\n                \"quantity\": 175,\n                \"image\": \"\",\n                \"created_at\": \"2025-12-19T12:18:34.000000Z\",\n                \"updated_at\": \"2025-12-19T12:18:34.000000Z\"\n            },\n            {\n                \"id\": 9997,\n                \"title\": \"Classic Glasses\",\n                \"description\": \"Et omnis minus expedita voluptatem nam praesentium iste exercitationem vitae ut non.\",\n                \"price\": \"3131.31\",\n                \"quantity\": 142,\n                \"image\": \"\",\n                \"created_at\": \"2025-12-19T12:18:34.000000Z\",\n                \"updated_at\": \"2025-12-19T12:18:34.000000Z\"\n            },\n            {\n                \"id\": 9996,\n                \"title\": \"Classic Glasses\",\n                \"description\": \"Est ut perspiciatis eos ducimus dolores qui minus dolor eos et veritatis.\",\n                \"price\": \"2666.45\",\n                \"quantity\": 176,\n                \"image\": \"\",\n                \"created_at\": \"2025-12-19T12:18:34.000000Z\",\n                \"updated_at\": \"2025-12-19T12:18:34.000000Z\"\n            },\n            {\n                \"id\": 9995,\n                \"title\": \"Leather Jacket\",\n                \"description\": \"Aut enim voluptas illum aliquid alias pariatur et.\",\n                \"price\": \"4034.54\",\n                \"quantity\": 161,\n                \"image\": \"\",\n                \"created_at\": \"2025-12-19T12:18:34.000000Z\",\n                \"updated_at\": \"2025-12-19T12:18:34.000000Z\"\n            },\n            {\n                \"id\": 9994,\n                \"title\": \"Sports Shoes\",\n                \"description\": \"Commodi omnis voluptatem provident cupiditate sunt consequuntur placeat.\",\n                \"price\": \"3753.88\",\n                \"quantity\": 169,\n                \"image\": \"\",\n                \"created_at\": \"2025-12-19T12:18:34.000000Z\",\n                \"updated_at\": \"2025-12-19T12:18:34.000000Z\"\n            },\n            {\n                \"id\": 9993,\n                \"title\": \"Sports Shoes\",\n                \"description\": \"Aspernatur sit sit ad qui eaque dolorum officia.\",\n                \"price\": \"2345.54\",\n                \"quantity\": 157,\n                \"image\": \"\",\n                \"created_at\": \"2025-12-19T12:18:34.000000Z\",\n                \"updated_at\": \"2025-12-19T12:18:34.000000Z\"\n            },\n            {\n                \"id\": 9992,\n                \"title\": \"Sports Shoes\",\n                \"description\": \"Consequatur id aut dolorem aut ex provident hic veniam totam fugit et quis et error necessitatibus nihil.\",\n                \"price\": \"3652.21\",\n                \"quantity\": 200,\n                \"image\": \"\",\n                \"created_at\": \"2025-12-19T12:18:34.000000Z\",\n                \"updated_at\": \"2025-12-19T12:18:34.000000Z\"\n            },\n            {\n                \"id\": 9991,\n                \"title\": \"Black Glasses\",\n                \"description\": \"Omnis corporis laborum nihil quasi sit et labore rem qui error odio eum dolor qui.\",\n                \"price\": \"2594.39\",\n                \"quantity\": 111,\n                \"image\": \"\",\n                \"created_at\": \"2025-12-19T12:18:34.000000Z\",\n                \"updated_at\": \"2025-12-19T12:18:34.000000Z\"\n            },\n            {\n                \"id\": 9990,\n                \"title\": \"Smart Watch\",\n                \"description\": \"Voluptas consequatur perspiciatis saepe est qui aut quis.\",\n                \"price\": \"4118.92\",\n                \"quantity\": 187,\n                \"image\": \"\",\n                \"created_at\": \"2025-12-19T12:18:33.000000Z\",\n                \"updated_at\": \"2025-12-19T12:18:33.000000Z\"\n            },\n            {\n                \"id\": 9989,\n                \"title\": \"Stylish Hat\",\n                \"description\": \"Accusantium tempore deleniti consectetur repellat pariatur qui nostrum dolor doloremque nobis dolorum laboriosam.\",\n                \"price\": \"1552.58\",\n                \"quantity\": 138,\n                \"image\": \"\",\n                \"created_at\": \"2025-12-19T12:18:33.000000Z\",\n                \"updated_at\": \"2025-12-19T12:18:33.000000Z\"\n            },\n            {\n                \"id\": 9988,\n                \"title\": \"Wireless Headphones\",\n                \"description\": \"Ab accusamus iure sequi dolores hic est ut reprehenderit non ipsam vel sunt accusamus expedita.\",\n                \"price\": \"953.27\",\n                \"quantity\": 137,\n                \"image\": \"\",\n                \"created_at\": \"2025-12-19T12:18:33.000000Z\",\n                \"updated_at\": \"2025-12-19T12:18:33.000000Z\"\n            },\n            {\n                \"id\": 9987,\n                \"title\": \"Perfume Bottle\",\n                \"description\": \"Necessitatibus impedit repudiandae et commodi cumque vel assumenda officia dolor et tempora similique porro perferendis porro.\",\n                \"price\": \"2337.08\",\n                \"quantity\": 155,\n                \"image\": \"\",\n                \"created_at\": \"2025-12-19T12:18:33.000000Z\",\n                \"updated_at\": \"2025-12-19T12:18:33.000000Z\"\n            }\n        ],\n        \"first_page_url\": \"http://localhost:8000/api/v1/products?page=1\",\n        \"from\": 1,\n        \"last_page\": 667,\n        \"last_page_url\": \"http://localhost:8000/api/v1/products?page=667\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"page\": null,\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/v1/products?page=1\",\n                \"label\": \"1\",\n                \"page\": 1,\n                \"active\": true\n            },\n            {\n                \"url\": \"http://localhost:8000/api/v1/products?page=2\",\n                \"label\": \"2\",\n                \"page\": 2,\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/v1/products?page=3\",\n                \"label\": \"3\",\n                \"page\": 3,\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/v1/products?page=4\",\n                \"label\": \"4\",\n                \"page\": 4,\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/v1/products?page=5\",\n                \"label\": \"5\",\n                \"page\": 5,\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/v1/products?page=6\",\n                \"label\": \"6\",\n                \"page\": 6,\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/v1/products?page=7\",\n                \"label\": \"7\",\n                \"page\": 7,\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/v1/products?page=8\",\n                \"label\": \"8\",\n                \"page\": 8,\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/v1/products?page=9\",\n                \"label\": \"9\",\n                \"page\": 9,\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/v1/products?page=10\",\n                \"label\": \"10\",\n                \"page\": 10,\n                \"active\": false\n            },\n            {\n                \"url\": null,\n                \"label\": \"...\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/v1/products?page=666\",\n                \"label\": \"666\",\n                \"page\": 666,\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/v1/products?page=667\",\n                \"label\": \"667\",\n                \"page\": 667,\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/v1/products?page=2\",\n                \"label\": \"Next &raquo;\",\n                \"page\": 2,\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": \"http://localhost:8000/api/v1/products?page=2\",\n        \"path\": \"http://localhost:8000/api/v1/products\",\n        \"per_page\": 15,\n        \"prev_page_url\": null,\n        \"to\": 15,\n        \"total\": 10001\n    }\n}"
+						},
+						{
+							"name": "example.ar.products",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "locale",
+										"value": "en",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{base_url_tharad_tech}}/products",
+									"host": [
+										"{{base_url_tharad_tech}}"
+									],
+									"path": [
+										"products"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Dec 2025 15:47:12 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": 10001,\n                \"title\": \"سماعات رأس\",\n                \"description\": \"Qui cumque ratione in nihil vel et doloremque aut.\",\n                \"price\": \"2430.64\",\n                \"quantity\": 136,\n                \"image\": \"\",\n                \"created_at\": \"2025-12-19T12:18:34.000000Z\",\n                \"updated_at\": \"2025-12-19T12:18:34.000000Z\"\n            },\n            {\n                \"id\": 10000,\n                \"title\": \"ساعة ذكية\",\n                \"description\": \"Quam qui ut doloribus similique autem sunt quia expedita velit ut architecto eos corrupti rerum.\",\n                \"price\": \"3806.50\",\n                \"quantity\": 112,\n                \"image\": \"\",\n                \"created_at\": \"2025-12-19T12:18:34.000000Z\",\n                \"updated_at\": \"2025-12-19T12:18:34.000000Z\"\n            },\n            {\n                \"id\": 9999,\n                \"title\": \"سماعات رأس\",\n                \"description\": \"Voluptates quia error explicabo quidem delectus illum dolorum quidem illum et.\",\n                \"price\": \"1248.54\",\n                \"quantity\": 160,\n                \"image\": \"\",\n                \"created_at\": \"2025-12-19T12:18:34.000000Z\",\n                \"updated_at\": \"2025-12-19T12:18:34.000000Z\"\n            },\n            {\n                \"id\": 9998,\n                \"title\": \"جاكيت جلد\",\n                \"description\": \"Deserunt quia molestiae corrupti eos aliquam error corporis numquam.\",\n                \"price\": \"2112.25\",\n                \"quantity\": 175,\n                \"image\": \"\",\n                \"created_at\": \"2025-12-19T12:18:34.000000Z\",\n                \"updated_at\": \"2025-12-19T12:18:34.000000Z\"\n            },\n            {\n                \"id\": 9997,\n                \"title\": \"نظارة كلاسيك\",\n                \"description\": \"Inventore magni voluptas doloremque explicabo vel quidem dolorem.\",\n                \"price\": \"3131.31\",\n                \"quantity\": 142,\n                \"image\": \"\",\n                \"created_at\": \"2025-12-19T12:18:34.000000Z\",\n                \"updated_at\": \"2025-12-19T12:18:34.000000Z\"\n            },\n            {\n                \"id\": 9996,\n                \"title\": \"نظارة كلاسيك\",\n                \"description\": \"In eligendi minus nihil praesentium tenetur tempora mollitia nulla dolorum aut amet amet sit libero totam.\",\n                \"price\": \"2666.45\",\n                \"quantity\": 176,\n                \"image\": \"\",\n                \"created_at\": \"2025-12-19T12:18:34.000000Z\",\n                \"updated_at\": \"2025-12-19T12:18:34.000000Z\"\n            },\n            {\n                \"id\": 9995,\n                \"title\": \"جاكيت جلد\",\n                \"description\": \"Mollitia illo aspernatur non iure rem occaecati id natus culpa est iusto aut provident placeat.\",\n                \"price\": \"4034.54\",\n                \"quantity\": 161,\n                \"image\": \"\",\n                \"created_at\": \"2025-12-19T12:18:34.000000Z\",\n                \"updated_at\": \"2025-12-19T12:18:34.000000Z\"\n            },\n            {\n                \"id\": 9994,\n                \"title\": \"حذاء رياضي\",\n                \"description\": \"Veniam vel ad nesciunt enim nemo quia qui reiciendis molestias sint temporibus ut sapiente sequi adipisci quo.\",\n                \"price\": \"3753.88\",\n                \"quantity\": 169,\n                \"image\": \"\",\n                \"created_at\": \"2025-12-19T12:18:34.000000Z\",\n                \"updated_at\": \"2025-12-19T12:18:34.000000Z\"\n            },\n            {\n                \"id\": 9993,\n                \"title\": \"حذاء رياضي\",\n                \"description\": \"Quas quos aut possimus soluta eligendi sint necessitatibus in dolor.\",\n                \"price\": \"2345.54\",\n                \"quantity\": 157,\n                \"image\": \"\",\n                \"created_at\": \"2025-12-19T12:18:34.000000Z\",\n                \"updated_at\": \"2025-12-19T12:18:34.000000Z\"\n            },\n            {\n                \"id\": 9992,\n                \"title\": \"حذاء رياضي\",\n                \"description\": \"Placeat vitae ullam fugit atque ut culpa dolore quisquam molestias.\",\n                \"price\": \"3652.21\",\n                \"quantity\": 200,\n                \"image\": \"\",\n                \"created_at\": \"2025-12-19T12:18:34.000000Z\",\n                \"updated_at\": \"2025-12-19T12:18:34.000000Z\"\n            },\n            {\n                \"id\": 9991,\n                \"title\": \"نظارة سوداء\",\n                \"description\": \"Rerum similique soluta sed quidem voluptatem sed nulla at laboriosam fugit repellat nostrum dicta harum et.\",\n                \"price\": \"2594.39\",\n                \"quantity\": 111,\n                \"image\": \"\",\n                \"created_at\": \"2025-12-19T12:18:34.000000Z\",\n                \"updated_at\": \"2025-12-19T12:18:34.000000Z\"\n            },\n            {\n                \"id\": 9990,\n                \"title\": \"ساعة ذكية\",\n                \"description\": \"A quia incidunt ullam vel necessitatibus nesciunt necessitatibus doloribus sint et amet rerum qui veritatis.\",\n                \"price\": \"4118.92\",\n                \"quantity\": 187,\n                \"image\": \"\",\n                \"created_at\": \"2025-12-19T12:18:33.000000Z\",\n                \"updated_at\": \"2025-12-19T12:18:33.000000Z\"\n            },\n            {\n                \"id\": 9989,\n                \"title\": \"قبعة أنيقة\",\n                \"description\": \"Nobis accusantium sed cum consequuntur non sunt alias consequatur rerum repellendus ut natus enim voluptatem.\",\n                \"price\": \"1552.58\",\n                \"quantity\": 138,\n                \"image\": \"\",\n                \"created_at\": \"2025-12-19T12:18:33.000000Z\",\n                \"updated_at\": \"2025-12-19T12:18:33.000000Z\"\n            },\n            {\n                \"id\": 9988,\n                \"title\": \"سماعات لاسلكية\",\n                \"description\": \"Sed aut est quis aut enim quidem harum commodi voluptatibus esse libero qui.\",\n                \"price\": \"953.27\",\n                \"quantity\": 137,\n                \"image\": \"\",\n                \"created_at\": \"2025-12-19T12:18:33.000000Z\",\n                \"updated_at\": \"2025-12-19T12:18:33.000000Z\"\n            },\n            {\n                \"id\": 9987,\n                \"title\": \"زجاجة عطر\",\n                \"description\": \"Sunt suscipit culpa quia porro qui itaque ut repellat omnis voluptatibus nihil officiis veniam quo et.\",\n                \"price\": \"2337.08\",\n                \"quantity\": 155,\n                \"image\": \"\",\n                \"created_at\": \"2025-12-19T12:18:33.000000Z\",\n                \"updated_at\": \"2025-12-19T12:18:33.000000Z\"\n            }\n        ],\n        \"first_page_url\": \"http://localhost:8000/api/v1/products?page=1\",\n        \"from\": 1,\n        \"last_page\": 667,\n        \"last_page_url\": \"http://localhost:8000/api/v1/products?page=667\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"pagination.previous\",\n                \"page\": null,\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/v1/products?page=1\",\n                \"label\": \"1\",\n                \"page\": 1,\n                \"active\": true\n            },\n            {\n                \"url\": \"http://localhost:8000/api/v1/products?page=2\",\n                \"label\": \"2\",\n                \"page\": 2,\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/v1/products?page=3\",\n                \"label\": \"3\",\n                \"page\": 3,\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/v1/products?page=4\",\n                \"label\": \"4\",\n                \"page\": 4,\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/v1/products?page=5\",\n                \"label\": \"5\",\n                \"page\": 5,\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/v1/products?page=6\",\n                \"label\": \"6\",\n                \"page\": 6,\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/v1/products?page=7\",\n                \"label\": \"7\",\n                \"page\": 7,\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/v1/products?page=8\",\n                \"label\": \"8\",\n                \"page\": 8,\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/v1/products?page=9\",\n                \"label\": \"9\",\n                \"page\": 9,\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/v1/products?page=10\",\n                \"label\": \"10\",\n                \"page\": 10,\n                \"active\": false\n            },\n            {\n                \"url\": null,\n                \"label\": \"...\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/v1/products?page=666\",\n                \"label\": \"666\",\n                \"page\": 666,\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/v1/products?page=667\",\n                \"label\": \"667\",\n                \"page\": 667,\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/v1/products?page=2\",\n                \"label\": \"pagination.next\",\n                \"page\": 2,\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": \"http://localhost:8000/api/v1/products?page=2\",\n        \"path\": \"http://localhost:8000/api/v1/products\",\n        \"per_page\": 15,\n        \"prev_page_url\": null,\n        \"to\": 15,\n        \"total\": 10001\n    }\n}"
+						},
+						{
+							"name": "GetAllProducts.filters",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url_tharad_tech}}/products?min_price=50&max_price=100&sort_by=price_desc",
+									"host": [
+										"{{base_url_tharad_tech}}"
+									],
+									"path": [
+										"products"
+									],
+									"query": [
+										{
+											"key": "min_price",
+											"value": "50"
+										},
+										{
+											"key": "max_price",
+											"value": "100"
+										},
+										{
+											"key": "sort_by",
+											"value": "price_desc"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Dec 2025 16:30:33 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"title\": \"Test Product\",\n            \"description\": \"This is a test\",\n            \"price\": \"99.99\",\n            \"quantity\": 10,\n            \"image\": \"\",\n            \"created_at\": \"2025-12-19 06:51:17\",\n            \"updated_at\": \"2025-12-19 06:51:17\"\n        },\n        {\n            \"id\": 8288,\n            \"title\": \"Luxury Lipstick\",\n            \"description\": \"Pariatur nesciunt consequatur et non blanditiis quam natus autem repellat.\",\n            \"price\": \"99.47\",\n            \"quantity\": 153,\n            \"image\": \"\",\n            \"created_at\": \"2025-12-19 12:16:55\",\n            \"updated_at\": \"2025-12-19 12:16:55\"\n        },\n        {\n            \"id\": 7988,\n            \"title\": \"Sports Shoes\",\n            \"description\": \"Ab provident eligendi dolorum aut repudiandae facere alias est ut magnam accusamus.\",\n            \"price\": \"98.91\",\n            \"quantity\": 155,\n            \"image\": \"\",\n            \"created_at\": \"2025-12-19 12:16:40\",\n            \"updated_at\": \"2025-12-19 12:16:40\"\n        },\n        {\n            \"id\": 7932,\n            \"title\": \"Over-Ear Headphones\",\n            \"description\": \"Sed labore impedit velit hic placeat voluptas a velit rerum et consequatur inventore ipsa cum.\",\n            \"price\": \"98.64\",\n            \"quantity\": 176,\n            \"image\": \"\",\n            \"created_at\": \"2025-12-19 12:16:36\",\n            \"updated_at\": \"2025-12-19 12:16:36\"\n        },\n        {\n            \"id\": 6626,\n            \"title\": \"Black Glasses\",\n            \"description\": \"Consequatur rerum omnis voluptatem odio itaque sed error dolor officia voluptas vel labore ut cupiditate.\",\n            \"price\": \"96.76\",\n            \"quantity\": 140,\n            \"image\": \"\",\n            \"created_at\": \"2025-12-19 12:15:28\",\n            \"updated_at\": \"2025-12-19 12:15:28\"\n        },\n        {\n            \"id\": 6676,\n            \"title\": \"Over-Ear Headphones\",\n            \"description\": \"Est provident quasi nam consequatur non aut quia deserunt sed animi facere.\",\n            \"price\": \"95.97\",\n            \"quantity\": 185,\n            \"image\": \"\",\n            \"created_at\": \"2025-12-19 12:15:31\",\n            \"updated_at\": \"2025-12-19 12:15:31\"\n        },\n        {\n            \"id\": 8602,\n            \"title\": \"Stylish Hat\",\n            \"description\": \"Odio recusandae aliquam inventore ducimus magni possimus non vel.\",\n            \"price\": \"95.33\",\n            \"quantity\": 122,\n            \"image\": \"\",\n            \"created_at\": \"2025-12-19 12:17:12\",\n            \"updated_at\": \"2025-12-19 12:17:12\"\n        },\n        {\n            \"id\": 8086,\n            \"title\": \"Smart Watch\",\n            \"description\": \"Voluptatem rerum placeat voluptatibus deserunt omnis iusto optio cum.\",\n            \"price\": \"95.03\",\n            \"quantity\": 198,\n            \"image\": \"\",\n            \"created_at\": \"2025-12-19 12:16:44\",\n            \"updated_at\": \"2025-12-19 12:16:44\"\n        },\n        {\n            \"id\": 5235,\n            \"title\": \"Sports Shoes\",\n            \"description\": \"Quos quo suscipit rem rerum aut explicabo sunt est aliquid.\",\n            \"price\": \"94.91\",\n            \"quantity\": 117,\n            \"image\": \"\",\n            \"created_at\": \"2025-12-19 12:14:19\",\n            \"updated_at\": \"2025-12-19 12:14:19\"\n        },\n        {\n            \"id\": 9450,\n            \"title\": \"Over-Ear Headphones\",\n            \"description\": \"Quidem quia et aperiam iste reiciendis reprehenderit sint.\",\n            \"price\": \"94.78\",\n            \"quantity\": 106,\n            \"image\": \"\",\n            \"created_at\": \"2025-12-19 12:18:00\",\n            \"updated_at\": \"2025-12-19 12:18:00\"\n        },\n        {\n            \"id\": 5285,\n            \"title\": \"Leather Jacket\",\n            \"description\": \"Earum quis repellat iusto et eum iusto reiciendis ea delectus molestiae sunt est quibusdam omnis.\",\n            \"price\": \"94.75\",\n            \"quantity\": 163,\n            \"image\": \"\",\n            \"created_at\": \"2025-12-19 12:14:22\",\n            \"updated_at\": \"2025-12-19 12:14:22\"\n        },\n        {\n            \"id\": 4663,\n            \"title\": \"Wireless Headphones\",\n            \"description\": \"Consequatur aut dolorem voluptatibus odio sit aut beatae voluptas vel mollitia temporibus non expedita magni porro.\",\n            \"price\": \"94.55\",\n            \"quantity\": 147,\n            \"image\": \"\",\n            \"created_at\": \"2025-12-19 12:13:52\",\n            \"updated_at\": \"2025-12-19 12:13:52\"\n        },\n        {\n            \"id\": 5412,\n            \"title\": \"Leather Jacket\",\n            \"description\": \"Odio omnis et voluptatibus eligendi iusto error nisi quo consectetur quam amet.\",\n            \"price\": \"93.34\",\n            \"quantity\": 168,\n            \"image\": \"\",\n            \"created_at\": \"2025-12-19 12:14:27\",\n            \"updated_at\": \"2025-12-19 12:14:27\"\n        },\n        {\n            \"id\": 9232,\n            \"title\": \"Over-Ear Headphones\",\n            \"description\": \"Possimus autem eveniet vel delectus similique ipsum sed omnis sunt nesciunt.\",\n            \"price\": \"93.27\",\n            \"quantity\": 155,\n            \"image\": \"\",\n            \"created_at\": \"2025-12-19 12:17:48\",\n            \"updated_at\": \"2025-12-19 12:17:48\"\n        },\n        {\n            \"id\": 7756,\n            \"title\": \"Classic Glasses\",\n            \"description\": \"Explicabo et in ut et modi similique qui exercitationem harum et inventore esse labore placeat.\",\n            \"price\": \"93.27\",\n            \"quantity\": 148,\n            \"image\": \"\",\n            \"created_at\": \"2025-12-19 12:16:27\",\n            \"updated_at\": \"2025-12-19 12:16:27\"\n        }\n    ],\n    \"links\": {\n        \"first\": \"http://localhost:8000/api/v1/products?page=1\",\n        \"last\": \"http://localhost:8000/api/v1/products?page=8\",\n        \"prev\": null,\n        \"next\": \"http://localhost:8000/api/v1/products?page=2\"\n    },\n    \"meta\": {\n        \"current_page\": 1,\n        \"from\": 1,\n        \"last_page\": 8,\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"page\": null,\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/v1/products?page=1\",\n                \"label\": \"1\",\n                \"page\": 1,\n                \"active\": true\n            },\n            {\n                \"url\": \"http://localhost:8000/api/v1/products?page=2\",\n                \"label\": \"2\",\n                \"page\": 2,\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/v1/products?page=3\",\n                \"label\": \"3\",\n                \"page\": 3,\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/v1/products?page=4\",\n                \"label\": \"4\",\n                \"page\": 4,\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/v1/products?page=5\",\n                \"label\": \"5\",\n                \"page\": 5,\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/v1/products?page=6\",\n                \"label\": \"6\",\n                \"page\": 6,\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/v1/products?page=7\",\n                \"label\": \"7\",\n                \"page\": 7,\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/v1/products?page=8\",\n                \"label\": \"8\",\n                \"page\": 8,\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/v1/products?page=2\",\n                \"label\": \"Next &raquo;\",\n                \"page\": 2,\n                \"active\": false\n            }\n        ],\n        \"path\": \"http://localhost:8000/api/v1/products\",\n        \"per_page\": 15,\n        \"to\": 15,\n        \"total\": 114\n    },\n    \"status\": \"success\"\n}"
+						}
+					]
+				},
+				{
+					"name": "GetProductById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "10|aDvXQ46o4E8R16DxfC42IV02yOV2naqdLrxn1cMu18d4184c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/products/8000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"8000"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "example.oneProduct",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/v1/products/6000",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"products",
+										"6000"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Dec 2025 15:51:31 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"id\": 6000,\n        \"title\": \"Black Glasses\",\n        \"description\": \"Ut laudantium dolorum vel corrupti enim voluptas commodi consequatur iure.\",\n        \"price\": \"1525.28\",\n        \"quantity\": 153,\n        \"image\": \"\",\n        \"created_at\": \"2025-12-19T12:14:56.000000Z\",\n        \"updated_at\": \"2025-12-19T12:14:56.000000Z\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Carts",
+			"item": [
+				{
+					"name": "GetCartItems",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|RkETYpcnnmFfqnBMjJXUuQ7pWBpJrFTcVaWqjEEp8f045325",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url_tharad_tech}}/cart",
+							"host": [
+								"{{base_url_tharad_tech}}"
+							],
+							"path": [
+								"cart"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "example.showCart",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url_tharad_tech}}/cart",
+									"host": [
+										"{{base_url_tharad_tech}}"
+									],
+									"path": [
+										"cart"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Dec 2025 19:41:26 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"product_id\": 1,\n            \"product\": {\n                \"id\": 1,\n                \"title\": \"Classic Glasses\",\n                \"description\": \"Est nesciunt et dolores magnam sit consequatur dolorem.\",\n                \"price\": \"286.47\",\n                \"quantity\": 151,\n                \"image\": \"http://localhost/media/1/glasses.jpg\"\n            },\n            \"quantity\": 30,\n            \"subtotal\": 8594.1,\n            \"created_at\": \"2025-12-19 19:23:36\",\n            \"updated_at\": \"2025-12-19 19:40:39\"\n        }\n    ],\n    \"status\": \"success\"\n}"
+						}
+					]
+				},
+				{
+					"name": "AddProductToCart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|RkETYpcnnmFfqnBMjJXUuQ7pWBpJrFTcVaWqjEEp8f045325",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "product_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "quantity",
+									"value": "5",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url_tharad_tech}}/cart",
+							"host": [
+								"{{base_url_tharad_tech}}"
+							],
+							"path": [
+								"cart"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "example.addProduct",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "product_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "quantity",
+											"value": "5",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url_tharad_tech}}/cart",
+									"host": [
+										"{{base_url_tharad_tech}}"
+									],
+									"path": [
+										"cart"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Dec 2025 19:40:39 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"product_id\": 1,\n        \"product\": {\n            \"id\": 1,\n            \"title\": \"Classic Glasses\",\n            \"description\": \"Est nesciunt et dolores magnam sit consequatur dolorem.\",\n            \"price\": \"286.47\",\n            \"quantity\": 151,\n            \"image\": \"http://localhost/media/1/glasses.jpg\"\n        },\n        \"quantity\": 30,\n        \"subtotal\": 8594.1,\n        \"created_at\": \"2025-12-19 19:23:36\",\n        \"updated_at\": \"2025-12-19 19:34:08\"\n    },\n    \"status\": \"success\",\n    \"message\": \"Product added to cart.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Remove Item from Cart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|RkETYpcnnmFfqnBMjJXUuQ7pWBpJrFTcVaWqjEEp8f045325",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_tharad_tech}}/cart/2",
+							"host": [
+								"{{base_url_tharad_tech}}"
+							],
+							"path": [
+								"cart",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ClearCart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|RkETYpcnnmFfqnBMjJXUuQ7pWBpJrFTcVaWqjEEp8f045325",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_tharad_tech}}/cart/clear",
+							"host": [
+								"{{base_url_tharad_tech}}"
+							],
+							"path": [
+								"cart",
+								"clear"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "Checkout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|RkETYpcnnmFfqnBMjJXUuQ7pWBpJrFTcVaWqjEEp8f045325",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{base_url_tharad_tech}}/checkout",
+							"host": [
+								"{{base_url_tharad_tech}}"
+							],
+							"path": [
+								"checkout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "example.checkout",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{base_url_tharad_tech}}/checkout",
+									"host": [
+										"{{base_url_tharad_tech}}"
+									],
+									"path": [
+										"checkout"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Dec 2025 08:42:04 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"total_price\": 29236,\n        \"items\": [\n            {\n                \"id\": 1,\n                \"product_id\": 2,\n                \"product\": {\n                    \"id\": 2,\n                    \"title\": \"Wireless Headphones\",\n                    \"description\": \"Soluta quisquam aspernatur voluptatem dicta cum saepe corporis adipisci ducimus atque possimus maxime sed dolores.\",\n                    \"price\": \"2923.60\",\n                    \"quantity\": 106,\n                    \"image\": \"http://localhost/media/2/headphone.jpg\",\n                    \"created_at\": \"2025-12-19 19:21:53\",\n                    \"updated_at\": \"2025-12-19 19:21:53\"\n                },\n                \"quantity\": 10,\n                \"price\": \"2923.60\"\n            }\n        ],\n        \"created_at\": \"2025-12-20 08:42:04\"\n    },\n    \"status\": \"success\"\n}"
+						},
+						{
+							"name": "example.cleanData",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{base_url_tharad_tech}}/checkout",
+									"host": [
+										"{{base_url_tharad_tech}}"
+									],
+									"path": [
+										"checkout"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Dec 2025 08:47:35 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 2,\n        \"total_price\": 11739.96,\n        \"items\": [\n            {\n                \"product_id\": 2,\n                \"product_name\": \"Wireless Headphones\",\n                \"quantity\": 2,\n                \"price\": \"2923.60\"\n            },\n            {\n                \"product_id\": 3,\n                \"product_name\": \"Leather Jacket\",\n                \"quantity\": 2,\n                \"price\": \"2946.38\"\n            }\n        ],\n        \"created_at\": \"2025-12-20 08:47:35\"\n    },\n    \"status\": \"success\"\n}"
+						},
+						{
+							"name": "example.image",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{base_url_tharad_tech}}/checkout",
+									"host": [
+										"{{base_url_tharad_tech}}"
+									],
+									"path": [
+										"checkout"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Dec 2025 08:49:32 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 3,\n        \"total_price\": 5892.76,\n        \"items\": [\n            {\n                \"product_id\": 3,\n                \"product_name\": \"Leather Jacket\",\n                \"Product_image\": \"http://localhost/media/3/blake-jacket.jpg\",\n                \"quantity\": 2,\n                \"price\": \"2946.38\"\n            }\n        ],\n        \"created_at\": \"2025-12-20 08:49:32\"\n    },\n    \"status\": \"success\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url_tharad_tech",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "token",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
