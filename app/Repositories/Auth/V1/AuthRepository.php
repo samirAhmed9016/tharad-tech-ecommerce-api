@@ -10,13 +10,15 @@ class AuthRepository implements AuthRepositoryInterface
 {
     public function register(array $data)
     {
+        if (User::where('email', $data['email'])->exists()) {
+            throw new \Exception('Email already exists');
+        }
         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
         $token = $user->createToken('API Token')->plainTextToken;
-
         return [
             'user' => $user,
             'token' => $token,
@@ -28,9 +30,7 @@ class AuthRepository implements AuthRepositoryInterface
         $user = User::where('email', $data['email'])->first();
 
         if (!$user || !Hash::check($data['password'], $user->password)) {
-            return [
-                'message' => 'there is something wrong in your mail or pass.',
-            ];
+            return null;  // Return null on any failure
         }
 
         $token = $user->createToken('API Token')->plainTextToken;
@@ -40,12 +40,9 @@ class AuthRepository implements AuthRepositoryInterface
             'token' => $token,
         ];
     }
-
     public function logout(Request $request)
     {
         $request->user()->currentAccessToken()->delete();
-        return [
-            'message' => 'Logged out successfully',
-        ];
+        return true;
     }
 }

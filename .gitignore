@@ -23,3 +23,6 @@ yarn-error.log
 /.zed
 /storage
 /storage/*
+/public/media/
+
+
