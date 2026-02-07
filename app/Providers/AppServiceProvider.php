@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use BezhanSalleh\FilamentLanguageSwitch\LanguageSwitch;
 use Illuminate\Support\ServiceProvider;
+use CraftForge\FilamentLanguageSwitcher\FilamentLanguageSwitcherPlugin;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,7 +21,21 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        LanguageSwitch::configureUsing(function (LanguageSwitch $switch) {
+            $switch
+                ->locales(['ar', 'en'])
+                ->flags([
+                    'ar' => asset('flags/ar.png'),
+                    'en' => asset('flags/en.png'),
+                ])->flagsOnly()->circular()
+            ;
+        });
+
+        // FilamentLanguageSwitcherPlugin::make()
+        //     ->locales([
+        //         ['code' => 'en', 'flag' => 'us'],
+        //         ['code' => 'ar', 'flag' => 'sa'],
+        //     ]);
     }
 
 

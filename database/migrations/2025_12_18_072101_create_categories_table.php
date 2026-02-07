@@ -20,7 +20,7 @@ return new class extends Migration
             $table->integer('sort')->default(0)->index();
             $table->json('title');
             $table->json('description')->nullable();
-            $table->string('slug')->unique();
+            $table->json('slug');
             $table->boolean('status')->default(true);
 
             $table->timestamps();

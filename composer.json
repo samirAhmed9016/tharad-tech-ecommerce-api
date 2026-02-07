@@ -9,14 +9,27 @@
     ],
     "license": "MIT",
     "require": {
-        "php": "^8.2",
-        "filament/filament": "5.0",
-        "filament/spatie-laravel-media-library-plugin": "^5.0",
-        "laravel/framework": "^12.0",
+        "php": "^8.3",
+        "althinect/filament-spatie-roles-permissions": "^2.2",
+        "bezhansalleh/filament-language-switch": "^3.1",
+        "bezhansalleh/filament-shield": "^3.3",
+        "craft-forge/filament-language-switcher": "^1.1",
+        "filament/filament": "^3.2",
+        "filament/notifications": "^3.2",
+        "filament/spatie-laravel-media-library-plugin": "^3.3",
+        "filament/spatie-laravel-settings-plugin": "^3.3",
+        "filament/widgets": "^3.2",
+        "guzzlehttp/guzzle": "^7.8",
+        "laravel/framework": "^11.9",
         "laravel/sanctum": "^4.0",
-        "laravel/tinker": "^2.10.1",
-        "spatie/laravel-medialibrary": "^11.17",
-        "spatie/laravel-translatable": "^6.11"
+        "laravel/tinker": "^2.9",
+        "manadinho/lara-translate": "^1.1",
+        "outerweb/filament-translatable-fields": "^2.1",
+        "spatie/laravel-medialibrary": "^11.10",
+        "spatie/laravel-permission": "^6.10",
+        "spatie/laravel-settings": "^3.6",
+        "spatie/laravel-sluggable": "^3.7",
+        "spatie/laravel-translatable": "^6.7"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
@@ -34,7 +47,9 @@
             "Database\\Seeders\\": "database/seeders/"
         },
         "files": [
-            "app/Helpers/ApiResponseHelper.php"
+            "app/Helpers/ApiResponseHelper.php",
+            "app/Helpers/slugHelper.php",
+            "app/Helpers/SettingHelper.php"
         ]
     },
     "autoload-dev": {

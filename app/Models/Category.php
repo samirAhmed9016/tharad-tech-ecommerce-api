@@ -19,11 +19,12 @@ class Category extends Model
         'sort',
     ];
 
-    public $translatable = ['title', 'description'];
+    public $translatable = ['title', 'description', 'slug'];
 
     protected $casts = [
         'title' => 'array',
         'description' => 'array',
+        'slug' => 'array',
         'status' => 'boolean',
         'sort' => 'integer',
     ];

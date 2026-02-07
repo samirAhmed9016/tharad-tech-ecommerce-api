@@ -4,12 +4,16 @@ use App\Http\Controllers\API\Auth\V1\AuthController;
 use App\Http\Controllers\Api\Carts\V1\CartController;
 use App\Http\Controllers\Api\Orders\V1\OrderController;
 use App\Http\Controllers\Api\Products\V1\ProductController;
+use App\Http\Controllers\Api\Setting\SettingController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/test', fn() => response()->json(['version' => 'v1']));
 
 
 
+
+Route::get('setting', [SettingController::class, 'getGeneralSettings']);
+Route::get('setting/{key}', [SettingController::class, 'show']);
 
 
 
