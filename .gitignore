@@ -26,3 +26,8 @@ yarn-error.log
 /public/media/
 
 
+/lang/vendor/
+/public/vendor/
+/public/css/filament/
+/public/js/filament/
+/lang/.json
