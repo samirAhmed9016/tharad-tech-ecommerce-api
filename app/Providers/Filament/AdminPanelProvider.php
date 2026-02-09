@@ -9,7 +9,11 @@ use App\Filament\Resources\OrderResource;
 use App\Filament\Resources\OrderResource\Widgets\statisticsOrderWidget;
 use App\Filament\Resources\ProductResource;
 use App\Filament\Resources\ProductResource as ResourcesProductResource;
+use App\Filament\Resources\RoleResource;
+use App\Filament\Resources\UserResource;
 use BezhanSalleh\FilamentLanguageSwitch\LanguageSwitch;
+use BezhanSalleh\FilamentShield\FilamentShieldPlugin;
+
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -46,6 +50,7 @@ class AdminPanelProvider extends PanelProvider
             ->colors([
                 'primary' => Color::Amber,
             ])
+            ->authGuard('admin')
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\Filament\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\Filament\Pages')
             ->pages([
@@ -54,9 +59,6 @@ class AdminPanelProvider extends PanelProvider
             ->profile()
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\Filament\Widgets')
             ->widgets([
-            // todo user_multi_widget
-            //static content trans
-            //statistics
             statisticsOrderWidget::class,
             AccountWidget::class,
                 // FilamentInfoWidget::class,
@@ -67,14 +69,23 @@ class AdminPanelProvider extends PanelProvider
                         'ar' => 'Arabic',
                         'en' => 'English',
                     ]),
-
-                // FilamentLanguageSwitcherPlugin::make()
-                //     ->locales([
-                //         ['code' => 'ar', 'name' => 'عربي', 'flag' => 'sa'],
-                //         ['code' => 'en', 'name' => 'English', 'flag' => 'us'],
-                //     ]),
-
-            ])
+            FilamentShieldPlugin::make()
+                ->gridColumns([
+                    'default' => 1,
+                    'sm' => 2,
+                    'lg' => 3,
+                ])
+                ->sectionColumnSpan(1)
+                ->checkboxListColumns([
+                    'default' => 1,
+                    'sm' => 2,
+                    'lg' => 1,
+                ])
+                ->resourceCheckboxListColumns([
+                    'default' => 1,
+                    'sm' => 2,
+                ]),
+        ])
             ->middleware([
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,
@@ -96,21 +107,22 @@ class AdminPanelProvider extends PanelProvider
                             ...Dashboard::getNavigationItems(),
                         ])
                         ->groups([
-                            NavigationGroup::make('Stock')
-                                ->label(__('Stock management'))
-                                ->items([
-                                    ...CategoryResource::getNavigationItems(),
-                                    ...ProductResource::getNavigationItems(),
-                                ]),
-                            NavigationGroup::make('orders')
+                    NavigationGroup::make('Stock')
+                        ->label(__('Stock management'))
+                        ->items($this->getStockNavigationItems()),
+
+                    NavigationGroup::make('orders')
                                 ->label(__('order management'))
                                 ->items([
 
                                     ...OrderResource::getNavigationItems(),
                                     ...OrderItemResource::getNavigationItems()
                                 ]),
+                    NavigationGroup::make('Admins and Roles')
+                        ->label(__('Admins and Roles'))
+                        ->items($this->getAdminsNavigationItems()),
 
-                            NavigationGroup::make('settings')
+                    NavigationGroup::make('settings')
                                 ->label(__('Settings'))
                                 ->items([
                                     ...Settings::getNavigationItems(), // ← Add this
@@ -120,5 +132,34 @@ class AdminPanelProvider extends PanelProvider
                         ]);
                 }
             );
+    }
+    private function getAdminsNavigationItems(): array
+    {
+        $admin = auth('admin')->user();
+        $items = [
+            'user' => UserResource::getNavigationItems(),
+            'role' => RoleResource::getNavigationItems(),
+        ];
+
+        $items = array_merge(...array_values(array_filter($items, function ($value, $key) use ($admin) {
+            return $admin->can('view_any_' . $key);
+        }, ARRAY_FILTER_USE_BOTH)));
+
+        return $items;
+    }
+
+
+    private function getStockNavigationItems(): array
+    {
+        $admin = auth('admin')->user();
+        $items = [
+            'category' => CategoryResource::getNavigationItems(),
+            'product' => ProductResource::getNavigationItems(),
+        ];
+        $items = array_merge(...array_values(array_filter($items, function ($value, $key) use ($admin) {
+            return $admin->can('view_any_' . $key);
+        }, ARRAY_FILTER_USE_BOTH)));
+
+        return $items;
     }
 }
