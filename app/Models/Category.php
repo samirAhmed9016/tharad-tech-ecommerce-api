@@ -10,6 +10,9 @@ class Category extends Model
 {
     use HasUuids, HasTranslations;
 
+
+    protected $keyType = 'string';
+    public $incrementing = false;
     protected $fillable = [
         'parent_id',
         'title',
