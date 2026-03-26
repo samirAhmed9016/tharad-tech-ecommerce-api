@@ -45,7 +45,7 @@ class Category extends Resource
     public static $tableStyle = 'tight';
     public static $showColumnBorders = true;
     public static $clickAction = 'edit';
-    public static $perPageOptions = [2];
+    public static $perPageOptions = [2, 4, 6, 8];
     /**
      * Get the fields displayed by the resource.
      *
