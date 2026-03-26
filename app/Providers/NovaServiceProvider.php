@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\Nova;
 use Laravel\Nova\NovaApplicationServiceProvider;
@@ -16,6 +17,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     public function boot()
     {
         parent::boot();
+
+        $this->getFooterContent();
     }
 
     /**
@@ -77,5 +80,15 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     public function register()
     {
         //
+    }
+    private function getFooterContent()
+    {
+        Nova::footer(function ($request) {
+            $view = 'nova/footer';
+
+            return view()->exists($view)
+                ? Blade::render(view($view)->render())
+                : '<p class="text-center text-sm text-primary-500">&copy; ' . date('Y') . ' All rights reserved.</p>';
+        });
     }
 }
