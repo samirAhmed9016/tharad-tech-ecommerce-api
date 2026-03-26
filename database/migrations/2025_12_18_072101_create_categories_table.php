@@ -22,7 +22,7 @@ return new class extends Migration
             $table->json('description')->nullable();
             $table->json('slug');
             $table->boolean('status')->default(true);
-
+            $table->softDeletes();
             $table->timestamps();
         });
     }
