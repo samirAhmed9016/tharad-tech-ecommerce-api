@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules;
+use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Gravatar;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Password;
@@ -62,6 +63,10 @@ class User extends Resource
                 ->onlyOnForms()
                 ->creationRules('required', Rules\Password::defaults())
                 ->updateRules('nullable', Rules\Password::defaults()),
+
+            Boolean::make('is_admin')
+                ->sortable()
+                ->showOnPreview(),
         ];
     }
 
@@ -107,5 +112,9 @@ class User extends Resource
     public function actions(NovaRequest $request)
     {
         return [];
+    }
+    public static function authorizedToCreate(Request $request)
+    {
+        return false;
     }
 }
