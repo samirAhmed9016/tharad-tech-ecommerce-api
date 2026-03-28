@@ -2,34 +2,30 @@
 
 namespace App\Nova;
 
-
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Boolean;
-use Laravel\Nova\Fields\HasMany;
-use Laravel\Nova\Fields\HasOne;
+use Laravel\Nova\Fields\Currency;
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Markdown;
+use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Slug;
-use Laravel\Nova\Fields\Status;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Category extends Resource
+class Product extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
-     * @var class-string<\App\Models\Category>
+     * @var class-string<\App\Models\Product>
      */
-    public static $model = \App\Models\Category::class;
+    public static $model = \App\Models\Product::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'title';
+    public static $title = 'id';
 
     /**
      * The columns that should be searched.
@@ -40,15 +36,6 @@ class Category extends Resource
         'id',
     ];
 
-    public static function observeActions(): bool
-    {
-        return false;
-    }
-
-    public static $tableStyle = 'tight';
-    public static $showColumnBorders = true;
-    public static $clickAction = 'edit';
-    public static $perPageOptions = [2, 4, 6, 8];
     /**
      * Get the fields displayed by the resource.
      *
@@ -58,26 +45,16 @@ class Category extends Resource
     public function fields(NovaRequest $request)
     {
         return [
-            Text::make('ID', 'id')->hideWhenCreating()->hideWhenUpdating(),
-            Text::make('Title', 'title')
-                ->sortable()
-                ->required()
-                ->placeholder('this the title'),
-
-            Slug::make('Slug', 'slug')
-                ->from('title')
-                ->withMeta([
-                    'extraAttributes' => [
-                        'readonly' => true
-                    ]
-                ])
-                ->hideFromIndex(),
-            Markdown::make('Description', 'description')
+            // ID::make()->sortable(),
+            Text::make('Name', 'title')
+                ->sortable(),
+            BelongsTo::make('Category', 'category', Category::class),
+            Text::make('Description', 'description')
                 ->showOnPreview(),
-            Boolean::make('Status', 'status'),
-            BelongsTo::make('parent', 'parent', Category::class)
-                ->showOnPreview(),
-            HasMany::make('products'),
+            Currency::make('Price', 'price')
+                ->sortable(),
+            Number::make('quantity'),
+            Boolean::make('status'),
         ];
     }
 
