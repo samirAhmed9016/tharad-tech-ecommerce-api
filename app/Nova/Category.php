@@ -48,7 +48,7 @@ class Category extends Resource
     public static $tableStyle = 'tight';
     public static $showColumnBorders = true;
     public static $clickAction = 'edit';
-    public static $perPageOptions = [2, 4, 6, 8];
+    public static $perPageOptions = [10, 25, 50, 100];
     /**
      * Get the fields displayed by the resource.
      *
@@ -61,7 +61,8 @@ class Category extends Resource
             Text::make('ID', 'id')->hideWhenCreating()->hideWhenUpdating(),
             Text::make('Title', 'title')
                 ->sortable()
-                ->required()
+                ->rules('required', 'max:100', 'unique:categories,title')
+                ->updateRules('required', 'max:100', 'unique:categories,title,{{resourceId}}')
                 ->placeholder('this the title'),
 
             Slug::make('Slug', 'slug')
@@ -76,6 +77,7 @@ class Category extends Resource
                 ->showOnPreview(),
             Boolean::make('Status', 'status'),
             BelongsTo::make('parent', 'parent', Category::class)
+                ->nullable()
                 ->showOnPreview(),
             HasMany::make('products'),
         ];
