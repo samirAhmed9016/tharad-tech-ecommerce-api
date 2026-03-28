@@ -30,6 +30,12 @@ class Category extends Resource
      * @var string
      */
     public static $title = 'title';
+    public function subtitle()
+    {
+        return $this->parent
+            ? "Subcategory of: {$this->parent->title}"
+            : "Main Category";
+    }
 
     /**
      * The columns that should be searched.

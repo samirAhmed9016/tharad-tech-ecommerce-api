@@ -27,6 +27,14 @@ class User extends Resource
      */
     public static $title = 'name';
 
+    public function subtitle()
+    {
+        return $this->is_admin ? 'Admin' : 'User';
+    }
+
+    public static $globalSearchResults = 2;
+
+    public static $globallySearchable = false;
     /**
      * The columns that should be searched.
      *

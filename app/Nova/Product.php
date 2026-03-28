@@ -25,7 +25,14 @@ class Product extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'title';
+    public function subtitle()
+    {
+        // return "Category: " . ($this->category->title ?? 'N/A');
+        return "Category: " . ($this->category?->parent?->title
+            ? $this->category->parent->title . ' → ' . $this->category->title
+            : $this->category?->title);
+    }
 
     /**
      * The columns that should be searched.
