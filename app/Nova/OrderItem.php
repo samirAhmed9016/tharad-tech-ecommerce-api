@@ -5,6 +5,9 @@ namespace App\Nova;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Currency;
+use Laravel\Nova\Fields\BelongsTo;
 
 class OrderItem extends Resource
 {
@@ -15,21 +18,18 @@ class OrderItem extends Resource
      */
     public static $model = \App\Models\OrderItem::class;
 
-    /**
-     * The single value that should be used to represent the resource when being displayed.
-     *
-     * @var string
-     */
     public static $title = 'id';
 
-    /**
-     * The columns that should be searched.
-     *
-     * @var array
-     */
     public static $search = [
         'id',
+        'order_id',
+        'product_id',
     ];
+
+    public static function authorizable(): bool
+    {
+        return false;
+    }
 
     /**
      * Get the fields displayed by the resource.
@@ -40,7 +40,23 @@ class OrderItem extends Resource
     public function fields(NovaRequest $request)
     {
         return [
-            ID::make()->sortable(),
+            ID::make('ID', 'id'),
+
+            BelongsTo::make('Order', 'order', Order::class),
+
+            BelongsTo::make('Product', 'product', Product::class),
+
+            Number::make('Quantity', 'quantity')
+                ->sortable()
+                ->rules('required', 'integer', 'min:1'),
+
+            Currency::make('Price', 'price')
+                ->sortable()
+                ->rules('required', 'numeric', 'min:0'),
+
+            Currency::make('Subtotal', 'subtotal')
+                ->sortable()
+                ->exceptOnForms(), // calculated automatically — no need to fill manually
         ];
     }
 
