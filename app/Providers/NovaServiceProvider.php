@@ -2,8 +2,15 @@
 
 namespace App\Providers;
 
+// use App\Models\Category;
+
+use App\Nova\Category;
+use App\Nova\Dashboards\Main;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Gate;
+use Laravel\Nova\Http\Requests\NovaRequest;
+use Laravel\Nova\Menu\MenuItem;
+use Laravel\Nova\Menu\MenuSection;
 use Laravel\Nova\Nova;
 use Laravel\Nova\NovaApplicationServiceProvider;
 
@@ -17,7 +24,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     public function boot()
     {
         parent::boot();
-
+        $this->getCustomMenu();
         $this->getFooterContent();
     }
 
@@ -89,6 +96,35 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
             return view()->exists($view)
                 ? Blade::render(view($view)->render())
                 : '<p class="text-center text-sm text-primary-500">&copy; ' . date('Y') . ' All rights reserved.</p>';
+        });
+    }
+
+
+    private function getCustomMenu()
+    {
+        Nova::mainMenu(function ($request) {
+            return [
+                MenuSection::dashboard(Main::class)
+                    ->icon('home'),
+
+                MenuSection::make('Users', [
+                    MenuItem::make('All Users', '/resources/users'),
+                    MenuItem::make('Create User', '/resources/users/new')
+                        ->canSee(function (NovaRequest $request) {
+                            return $request->user()->is_admin;
+                        })
+                ])->icon('users')->collapsable(),
+
+
+
+                MenuSection::resource(Category::class)
+                    ->icon('category'),
+
+                MenuSection::make('Products', [
+                    MenuItem::make('All Products', '/resources/products'),
+                    MenuItem::make('Create Product', '/resources/products/new'),
+                ])->icon('shopping-bag')->collapsable(),
+            ];
         });
     }
 }
