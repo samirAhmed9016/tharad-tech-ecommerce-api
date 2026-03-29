@@ -3,7 +3,7 @@
 namespace App\Nova;
 
 use App\Models\Order as OrderModel;
-use App\Models\OrderItem;
+use App\Nova\OrderItem;
 use App\Nova\Filters\OrderStatus;
 use App\Nova\Metrics\AvgOrders;
 use App\Nova\Metrics\OrderPerUser;
@@ -59,7 +59,7 @@ class Order extends Resource
                 'failed' => 'Failed',
             ])->displayUsingLabels(),
 
-            // HasMany::make('Items', 'items', OrderItem::class),
+            HasMany::make('Items', 'items', OrderItem::class),
         ];
     }
 
