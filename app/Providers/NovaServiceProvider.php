@@ -124,6 +124,10 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                     MenuItem::make('All Products', '/resources/products'),
                     MenuItem::make('Create Product', '/resources/products/new'),
                 ])->icon('shopping-bag')->collapsable(),
+
+                MenuSection::make('Order Items', [
+                    MenuItem::make('All Order Items', '/resources/order-items'),
+                ])->icon('shopping-cart')->collapsable(),
             ];
         });
     }
