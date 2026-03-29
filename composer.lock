@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6c244f94cb3e2c7b2b8243241a2e35a6",
+    "content-hash": "4ae07da1cad8942a2dd03b1cc88be449",
     "packages": [
         {
             "name": "althinect/filament-spatie-roles-permissions",
@@ -133,6 +133,65 @@
                 "source": "https://github.com/AnourValar/eloquent-serialize/tree/1.3.6"
             },
             "time": "2026-03-18T15:36:03+00:00"
+        },
+        {
+            "name": "badinansoft/nova-language-switch",
+            "version": "3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/badinansoft/nova-language-switch.git",
+                "reference": "96dc24932b73a9c74971163bb86535a689cadd49"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/badinansoft/nova-language-switch/zipball/96dc24932b73a9c74971163bb86535a689cadd49",
+                "reference": "96dc24932b73a9c74971163bb86535a689cadd49",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/nova": "^4.0|^5.0",
+                "php": "^7.3|^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Badinansoft\\LanguageSwitch\\ToolServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Badinansoft\\LanguageSwitch\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Shahab Zebari",
+                    "email": "me@shahabzebari.net",
+                    "homepage": "https://shahabzebari.net",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A Laravel Nova package to switch language in your application",
+            "homepage": "https://github.com/badinansoft/nova-language-switch",
+            "keywords": [
+                "i18n",
+                "language",
+                "laravel",
+                "nova",
+                "switch",
+                "translation"
+            ],
+            "support": {
+                "issues": "https://github.com/badinansoft/nova-language-switch/issues",
+                "source": "https://github.com/badinansoft/nova-language-switch/tree/3.0.0"
+            },
+            "time": "2025-01-25T15:47:30+00:00"
         },
         {
             "name": "bezhansalleh/filament-language-switch",
