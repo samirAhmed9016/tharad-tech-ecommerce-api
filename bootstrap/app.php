@@ -12,7 +12,9 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        //
+    $middleware->web(append: [
+        \Badinansoft\LanguageSwitch\Http\Middleware\LanguageSwitch::class,
+    ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

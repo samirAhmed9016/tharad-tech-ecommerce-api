@@ -26,6 +26,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
         parent::boot();
         $this->getCustomMenu();
         $this->getFooterContent();
+        $this->handleLocale();
     }
 
     /**
@@ -76,7 +77,10 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      */
     public function tools()
     {
-        return [];
+        return [
+            new \Badinansoft\LanguageSwitch\LanguageSwitch(),
+
+        ];
     }
 
     /**
@@ -96,6 +100,20 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
             return view()->exists($view)
                 ? Blade::render(view($view)->render())
                 : '<p class="text-center text-sm text-primary-500">&copy; ' . date('Y') . ' All rights reserved.</p>';
+        });
+    }
+
+    private function handleLocale()
+    {
+        Nova::userLocale(function () {
+            return match (app()->getLocale()) {
+                'en' => 'en-US',
+                'ar' => 'ar-SA',
+                default => null,
+            };
+        });
+        Nova::serving(function () {
+            Nova::translations(lang_path('vendor/nova/' . app()->getLocale() . '.json'));
         });
     }
 
