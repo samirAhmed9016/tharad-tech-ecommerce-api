@@ -4,6 +4,7 @@ namespace App\Nova;
 
 
 use Illuminate\Http\Request;
+use Illuminate\Testing\Fluent\Concerns\Has;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\HasMany;
@@ -86,6 +87,7 @@ class Category extends Resource
                 ->nullable()
                 ->showOnPreview(),
             HasMany::make('products'),
+            HasMany::make('children', 'children', Category::class),
         ];
     }
 
