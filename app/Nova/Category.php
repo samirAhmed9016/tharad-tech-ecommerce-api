@@ -87,7 +87,6 @@ class Category extends Resource
                 ->nullable()
                 ->showOnPreview(),
             HasMany::make('products'),
-            HasMany::make('children', 'children', Category::class),
         ];
     }
 
