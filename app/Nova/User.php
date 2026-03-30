@@ -4,9 +4,11 @@ namespace App\Nova;
 
 use App\Nova\Filters\Admin;
 use Illuminate\Http\Request;
+use Illuminate\Testing\Fluent\Concerns\Has;
 use Illuminate\Validation\Rules;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Gravatar;
+use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Password;
 use Laravel\Nova\Fields\Text;
@@ -76,6 +78,7 @@ class User extends Resource
             Boolean::make('is_admin')
                 ->sortable()
                 ->showOnPreview(),
+            HasMany::make('orders', 'orders', Order::class),
         ];
     }
 
