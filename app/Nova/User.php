@@ -79,6 +79,7 @@ class User extends Resource
                 ->sortable()
                 ->showOnPreview(),
             HasMany::make('orders', 'orders', Order::class),
+            HasMany::make('orderItems', 'orderItems', OrderItem::class)
         ];
     }
 
