@@ -130,6 +130,6 @@ class User extends Resource
     }
     public static function authorizedToCreate(Request $request)
     {
-        return true;
+        return false;
     }
 }
