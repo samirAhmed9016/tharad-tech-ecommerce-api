@@ -22,4 +22,9 @@ enum IdentifierLoginType: string
                 fn($item) => [ $item->value => self::from($item->value)->title() ]
             )->toArray();
     }
+    public static function fromMixed(mixed $value): self
+    {
+        if ($value instanceof self) return $value;
+        return self::from($value);
+    }
 }
