@@ -6,7 +6,7 @@ enum ApprovalRole: string
 {
     case HR    = 'hr';
     case ADMIN = 'admin';
-    
+
 
     public function title(): string
     {
