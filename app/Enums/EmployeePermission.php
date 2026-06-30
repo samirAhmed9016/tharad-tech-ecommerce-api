@@ -30,6 +30,7 @@ enum EmployeePermission: string
             self::COUPON         => __('Coupon'),
         };
     }
+    
 
     public static function options()
     {
