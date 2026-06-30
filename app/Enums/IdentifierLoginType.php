@@ -27,4 +27,5 @@ enum IdentifierLoginType: string
         if ($value instanceof self) return $value;
         return self::from($value);
     }
+    
 }
