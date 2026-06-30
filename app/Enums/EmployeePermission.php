@@ -30,7 +30,7 @@ enum EmployeePermission: string
             self::COUPON         => __('Coupon'),
         };
     }
-    
+
 
     public static function options()
     {
@@ -38,6 +38,7 @@ enum EmployeePermission: string
         $permissions = collect(self::permissions());
         $result = [];
 
+        
         // Define restricted cases and their excluded permissions
         $restrictedCases = [
             self::ORDER->value,
