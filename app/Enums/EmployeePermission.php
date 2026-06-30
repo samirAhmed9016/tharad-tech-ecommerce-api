@@ -15,7 +15,6 @@ enum EmployeePermission: string
     case BRANCH     = 'branch';
     case COUPON     = 'coupon';
 
-    
     public function title()
     {
         return match ($this) {
